@@ -1,0 +1,43 @@
+import Link from "next/link";
+import { PROFILE, type Locale } from "@/data/site";
+import { Section, SectionHeading } from "./Section";
+import Reveal from "@/components/motion/Reveal";
+
+export default function About({ locale }: { locale: Locale }) {
+  const p = PROFILE[locale];
+  const t = locale === "en"
+    ? { eyebrow: "About", title: "Who is Darwin Ontiveros", more: "Read full bio" }
+    : { eyebrow: "Sobre mí", title: "Quién es Darwin Ontiveros", more: "Ver biografía completa" };
+  const aboutHref = locale === "en" ? "/en/about" : "/sobre-mi";
+
+  // Primer párrafo de la bio larga como resumen.
+  const intro = p.bioLong.split("\n\n")[0];
+
+  return (
+    <Section id="about">
+      <div className="grid gap-10 md:grid-cols-[1fr_1.2fr] md:items-center">
+        <Reveal>
+          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-border bg-surface">
+            {/* Reemplazar con foto profesional en /public/darwin-portrait.jpg */}
+            <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-surface to-surface-2 text-muted-2">
+              <span className="text-sm">Foto profesional</span>
+            </div>
+          </div>
+        </Reveal>
+        <div>
+          <SectionHeading eyebrow={t.eyebrow} title={t.title} />
+          <Reveal>
+            <p className="text-lg leading-relaxed text-muted">{intro}</p>
+            <Link
+              href={aboutHref}
+              className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-accent-soft"
+            >
+              {t.more}
+              <span aria-hidden>→</span>
+            </Link>
+          </Reveal>
+        </div>
+      </div>
+    </Section>
+  );
+}
