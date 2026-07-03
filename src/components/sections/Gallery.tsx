@@ -88,15 +88,15 @@ export default function Gallery({ locale }: { locale: Locale }) {
     <Section id="galeria" className="bg-surface/30">
       <SectionHeading eyebrow={t.eyebrow} title={t.title} subtitle={t.subtitle} />
 
-      <div className="grid gap-5 lg:grid-cols-2">
-        <Reveal>
-          <figure className="group relative aspect-[4/3] overflow-hidden rounded-2xl border border-border bg-surface">
+      <div className="grid gap-5 lg:grid-cols-2 lg:items-stretch">
+        <Reveal className="h-full">
+          <figure className="group relative h-full min-h-[420px] overflow-hidden rounded-2xl border border-border bg-[#0a0b12]">
             <Image
               src={FEATURED.src}
               alt={FEATURED.alt[locale]}
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              className="object-contain transition-transform duration-500 group-hover:scale-105"
             />
             <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#05060a]/90 to-transparent p-6">
               <span className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/10 px-3 py-1 text-xs font-semibold text-accent-soft backdrop-blur">

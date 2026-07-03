@@ -18,13 +18,13 @@ export default function About({ locale }: { locale: Locale }) {
     <Section id="about">
       <div className="grid gap-10 md:grid-cols-[1fr_1.2fr] md:items-center">
         <Reveal>
-          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-border bg-surface">
+          <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl border border-border bg-[#0a0b12]">
             <Image
               src="/images/sobre-mi.jpg"
               alt={PROFILE.fullName}
               fill
               sizes="(max-width: 768px) 100vw, 40vw"
-              className="object-cover"
+              className="object-contain"
             />
           </div>
         </Reveal>

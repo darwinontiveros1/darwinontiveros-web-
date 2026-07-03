@@ -71,7 +71,7 @@ export default function ContactForm({ locale }: { locale: Locale }) {
   }
 
   const inputClass =
-    "w-full rounded-lg border border-border bg-surface px-4 py-3 text-sm text-foreground placeholder:text-muted-2 outline-none transition-colors focus:border-accent";
+    "w-full rounded-lg border border-border bg-surface px-4 py-3 text-sm text-foreground placeholder:text-muted-2 outline-none transition-all focus:border-accent focus:ring-2 focus:ring-accent/30 focus:bg-surface-2";
 
   return (
     <Section id="contacto">
@@ -135,7 +135,7 @@ export default function ContactForm({ locale }: { locale: Locale }) {
               <button
                 type="submit"
                 disabled={status === "loading"}
-                className="w-full rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-[#05060a] transition-transform hover:scale-[1.02] disabled:opacity-60"
+                className="shine w-full rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-[#05060a] transition-transform hover:scale-[1.02] accent-glow disabled:opacity-60"
               >
                 {status === "loading" ? t.sending : t.send}
               </button>

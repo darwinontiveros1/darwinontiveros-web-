@@ -54,13 +54,13 @@ export default function Page() {
           </Reveal>
 
           <Reveal>
-            <div className="relative mb-6 aspect-[4/5] w-full overflow-hidden rounded-2xl border border-border bg-surface">
+            <div className="relative mb-6 aspect-[3/4] w-full overflow-hidden rounded-2xl border border-border bg-[#0a0b12]">
               <Image
                 src="/images/sobre-mi.jpg"
                 alt={P.fullName}
                 fill
                 sizes="(max-width: 1024px) 100vw, 33vw"
-                className="object-cover"
+                className="object-contain"
               />
             </div>
             <div className="card p-7">
