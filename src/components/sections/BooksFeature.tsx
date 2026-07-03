@@ -33,7 +33,7 @@ export default function BooksFeature({ locale }: { locale: Locale }) {
   return (
     <Section id="libros" className="bg-background-soft">
       <div className="grid gap-12 md:grid-cols-[0.85fr_1.15fr] md:items-center">
-        <Reveal>
+        <Reveal direction="right">
           <div className="relative mx-auto w-full max-w-xs" style={{ perspective: 1400 }}>
             {/* Halo teal detrás de la portada */}
             <div
@@ -88,7 +88,7 @@ export default function BooksFeature({ locale }: { locale: Locale }) {
 
         <div>
           <SectionHeading eyebrow={t.eyebrow} title={title} />
-          <Reveal>
+          <Reveal direction="left">
             <p className="text-lg leading-relaxed text-muted">
               {book.description[locale]}
             </p>

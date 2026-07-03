@@ -12,20 +12,20 @@ export default function AuthorityStrip({ locale }: { locale: Locale }) {
   const items =
     locale === "en"
       ? [
-          "Guinness World Records",
-          "International Conferences",
           "Bestselling Author",
+          "International Conferences",
           "+23K Community",
           "Sales Mentor",
           "Keynote Speaker",
+          "High-Performance Teams",
         ]
       : [
-          "Guinness World Records",
-          "Conferencias Internacionales",
           "Autor Bestseller",
+          "Conferencias Internacionales",
           "+23K de Comunidad",
           "Mentor de Ventas",
           "Conferencista",
+          "Equipos de Alto Rendimiento",
         ];
 
   // Duplicamos para un scroll infinito sin cortes

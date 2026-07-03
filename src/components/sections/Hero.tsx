@@ -39,10 +39,10 @@ export default function Hero({ locale }: { locale: Locale }) {
     my.set(0);
   }
 
-  const guinnessLabel =
-    locale === "en" ? "Guinness World Records" : "Guinness World Records";
-  const communityLabel =
-    locale === "en" ? "Community" : "Comunidad";
+  const bookBadgeTitle = locale === "en" ? "Bestselling author" : "Autor bestseller";
+  const bookBadgeSub =
+    locale === "en" ? "Unstoppable & Abundant" : "Imparable y Abundante";
+  const communityLabel = locale === "en" ? "Community" : "Comunidad";
 
   return (
     <section className="relative overflow-hidden pt-32 pb-20 sm:pt-40 sm:pb-28">
@@ -77,8 +77,8 @@ export default function Hero({ locale }: { locale: Locale }) {
               {eyebrow}
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-accent/30 bg-accent/10 px-3 py-1.5 text-xs font-semibold text-accent-soft backdrop-blur">
-              <TrophyIcon />
-              Guinness World Records
+              <BookIcon />
+              {locale === "en" ? "Bestselling author" : "Autor bestseller"}
             </span>
           </motion.div>
 
@@ -170,7 +170,7 @@ export default function Hero({ locale }: { locale: Locale }) {
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#05060a] via-transparent to-transparent opacity-60" />
           </motion.div>
 
-          {/* Badge flotante: Guinness */}
+          {/* Badge flotante: Libro */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -183,13 +183,13 @@ export default function Hero({ locale }: { locale: Locale }) {
               className="flex items-center gap-2 rounded-xl border border-border bg-surface/90 px-3 py-2 shadow-xl backdrop-blur"
             >
               <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent/15 text-accent">
-                <TrophyIcon />
+                <BookIcon />
               </span>
               <div className="pr-1">
                 <p className="text-[10px] uppercase tracking-wider text-muted-2">
-                  {guinnessLabel}
+                  {bookBadgeTitle}
                 </p>
-                <p className="text-xs font-semibold text-foreground">Récord mundial</p>
+                <p className="text-xs font-semibold text-foreground">{bookBadgeSub}</p>
               </div>
             </motion.div>
           </motion.div>
@@ -223,15 +223,11 @@ export default function Hero({ locale }: { locale: Locale }) {
   );
 }
 
-function TrophyIcon() {
+function BookIcon() {
   return (
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
-      <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
-      <path d="M4 22h16" />
-      <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
-      <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" />
-      <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" />
+      <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+      <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
     </svg>
   );
 }
