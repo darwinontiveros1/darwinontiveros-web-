@@ -8,9 +8,9 @@ export const SITE = {
   domain: "www.darwinontiveros.com",
   url: "https://www.darwinontiveros.com",
   name: "Darwin Ontiveros",
-  // Color accent del tema (azul eléctrico tipo Vercel/Stripe).
+  // Color accent del tema (teal).
   // Para cambiarlo, ajustá también --accent en globals.css.
-  accent: "#3b82f6",
+  accent: "#03bfb5",
 } as const;
 
 export type Locale = "es" | "en";
