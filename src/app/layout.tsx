@@ -71,7 +71,7 @@ export default function RootLayout({
       <head>
         <JsonLd data={[personSchema("es"), websiteSchema("es")]} />
       </head>
-      <body className="min-h-full">{children}</body>
+      <body className="noise min-h-full">{children}</body>
       {/* Google Analytics 4 — solo se carga si NEXT_PUBLIC_GA_ID está definida. */}
       {gaId ? <GoogleAnalytics gaId={gaId} /> : null}
     </html>

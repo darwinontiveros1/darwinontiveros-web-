@@ -142,9 +142,39 @@ export const BOOKS = [
       es: ["Ventas", "Mentalidad", "Abundancia", "Disciplina", "Liderazgo"],
       en: ["Sales", "Mindset", "Abundance", "Discipline", "Leadership"],
     },
-    // Agregar cuando esté disponible:
-    amazonUrl: null as string | null,
+    amazonUrl: "https://www.amazon.com/-/es/dp/B0DRW99JP1" as string | null,
     goodreadsUrl: null as string | null,
+  },
+] as const;
+
+// --- Testimonios -----------------------------------------------------------
+// NOTA: Reemplazá estos testimonios de ejemplo con reseñas reales
+// (nombre, rol y frase). El diseño se adapta automáticamente.
+
+export const TESTIMONIALS = [
+  {
+    quote: {
+      es: "Darwin no solo enseña a vender, transforma tu forma de pensar. Después de su conferencia mi equipo duplicó su producción en un trimestre.",
+      en: "Darwin doesn't just teach you to sell, he transforms the way you think. After his talk my team doubled its production in a quarter.",
+    },
+    name: "María Fernanda R.",
+    role: { es: "Directora Comercial", en: "Sales Director" },
+  },
+  {
+    quote: {
+      es: "La mejor inversión que hice para mi carrera. Su mentalidad de abundancia me sacó de un techo en el que llevaba años estancado.",
+      en: "The best investment I made in my career. His abundance mindset broke a ceiling I'd been stuck under for years.",
+    },
+    name: "Carlos M.",
+    role: { es: "Emprendedor", en: "Entrepreneur" },
+  },
+  {
+    quote: {
+      es: "Un conferencista que llena auditorios por una razón: entrega herramientas que funcionan. Energía, claridad y resultados reales.",
+      en: "A speaker who fills auditoriums for a reason: he delivers tools that work. Energy, clarity and real results.",
+    },
+    name: "Ana Lucía G.",
+    role: { es: "Líder de Equipo", en: "Team Leader" },
   },
 ] as const;
 
