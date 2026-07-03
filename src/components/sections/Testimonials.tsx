@@ -24,7 +24,7 @@ export default function Testimonials({ locale }: { locale: Locale }) {
 
       <div className="grid gap-6 md:grid-cols-3">
         {TESTIMONIALS.map((item, i) => (
-          <Reveal key={item.name} delay={i}>
+          <Reveal key={item.name} delay={i} direction="scale">
             <figure className="glow-ring card card-hover flex h-full flex-col justify-between p-7">
               <div>
                 <QuoteIcon />

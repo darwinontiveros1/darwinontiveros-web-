@@ -12,12 +12,12 @@ type Photo = {
 const FEATURED: Photo = {
   src: "/images/guinness.jpg",
   alt: {
-    es: "Darwin Ontiveros junto al logo de Guinness World Records",
-    en: "Darwin Ontiveros next to the Guinness World Records logo",
+    es: "Darwin Ontiveros en un evento de reconocimiento",
+    en: "Darwin Ontiveros at a recognition event",
   },
   caption: {
-    es: "Guinness World Records",
-    en: "Guinness World Records",
+    es: "Eventos y reconocimientos",
+    en: "Events & recognition",
   },
 };
 
@@ -75,13 +75,13 @@ export default function Gallery({ locale }: { locale: Locale }) {
           eyebrow: "Trajectory",
           title: "Impact that speaks for itself",
           subtitle:
-            "From a Guinness World Records milestone to stages filled with people ready to transform their mindset.",
+            "From recognized events to stages filled with people ready to transform their mindset.",
         }
       : {
           eyebrow: "Trayectoria",
           title: "Un impacto que habla por sí solo",
           subtitle:
-            "De un hito Guinness World Records a escenarios llenos de personas listas para transformar su mentalidad.",
+            "De eventos con reconocimiento a escenarios llenos de personas listas para transformar su mentalidad.",
         };
 
   return (

@@ -17,19 +17,33 @@ export default function CountUp({
   className?: string;
 }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-60px" });
-  const [display, setDisplay] = useState("0");
+  const inView = useInView(ref, { once: true, margin: "-80px" });
 
-  // Descompone "23.4K+" -> { number: 23.4, suffix: "K+", decimals: 1 }
-  const match = value.match(/^([\d.,]+)(.*)$/);
-  const rawNumber = match ? parseFloat(match[1].replace(",", ".")) : 0;
-  const suffix = match ? match[2] : value;
-  const decimals = match && match[1].includes(".") ? 1 : 0;
+  // Descompone "23.4K+" -> { number: 23.4, suffix: "K+", decimals: 1 }.
+  // Se calcula una sola vez a partir del string (valores primitivos estables).
+  const m = value.match(/^([\d.,]+)(.*)$/);
+  const target = m ? parseFloat(m[1].replace(",", ".")) : null;
+  const suffix = m ? m[2] : "";
+  const decimals = m && m[1].includes(".") ? 1 : 0;
+
+  const [display, setDisplay] = useState<string>(
+    target === null ? value : "0"
+  );
 
   useEffect(() => {
-    if (!inView) return;
-    if (!match) {
+    // Si no es numérico, mostramos el texto tal cual.
+    if (target === null) {
       setDisplay(value);
+      return;
+    }
+    if (!inView) return;
+
+    // Respetar la preferencia de menos movimiento.
+    const reduce =
+      typeof window !== "undefined" &&
+      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) {
+      setDisplay(target.toFixed(decimals));
       return;
     }
 
@@ -37,27 +51,23 @@ export default function CountUp({
     const start = performance.now();
 
     const tick = (now: number) => {
-      const elapsed = now - start;
-      const progress = Math.min(elapsed / duration, 1);
+      const progress = Math.min((now - start) / duration, 1);
       // easeOutExpo para un final suave y elegante
       const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
-      const current = rawNumber * eased;
-      setDisplay(current.toFixed(decimals));
-      if (progress < 1) {
-        raf = requestAnimationFrame(tick);
-      } else {
-        setDisplay(rawNumber.toFixed(decimals));
-      }
+      setDisplay((target * eased).toFixed(decimals));
+      if (progress < 1) raf = requestAnimationFrame(tick);
+      else setDisplay(target.toFixed(decimals));
     };
 
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
-  }, [inView, rawNumber, decimals, duration, match, value]);
+    // Dependencias primitivas: no se reinicia en cada render.
+  }, [inView, target, decimals, duration, value]);
 
   return (
     <span ref={ref} className={className}>
       {display}
-      {match ? suffix : ""}
+      {suffix}
     </span>
   );
 }

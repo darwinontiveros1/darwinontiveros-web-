@@ -247,4 +247,64 @@ body {
     );
     mask-image: radial-gradient(70% 60% at 50% 0%, #000 40%, transparent 100%);
   }
+
+  /* Aurora animada — manchas teal que se desplazan lentamente de fondo */
+  .aurora {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .aurora::before,
+  .aurora::after {
+    content: "";
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(90px);
+    opacity: 0.5;
+    will-change: transform;
+  }
+  .aurora::before {
+    width: 45vw;
+    height: 45vw;
+    top: -10%;
+    left: -5%;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+    animation: aurora-1 18s ease-in-out infinite alternate;
+  }
+  .aurora::after {
+    width: 40vw;
+    height: 40vw;
+    top: 20%;
+    right: -8%;
+    background: radial-gradient(
+      circle,
+      rgba(69, 214, 206, 0.28) 0%,
+      transparent 70%
+    );
+    animation: aurora-2 22s ease-in-out infinite alternate;
+  }
+  @keyframes aurora-1 {
+    0% {
+      transform: translate(0, 0) scale(1);
+    }
+    100% {
+      transform: translate(12vw, 8vh) scale(1.25);
+    }
+  }
+  @keyframes aurora-2 {
+    0% {
+      transform: translate(0, 0) scale(1.1);
+    }
+    100% {
+      transform: translate(-10vw, 6vh) scale(0.85);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .aurora::before,
+    .aurora::after {
+      animation: none;
+    }
+  }
 }
