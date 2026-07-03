@@ -5,6 +5,7 @@ import Stats from "@/components/sections/Stats";
 import About from "@/components/sections/About";
 import Philosophy from "@/components/sections/Philosophy";
 import Speaking from "@/components/sections/Speaking";
+import Gallery from "@/components/sections/Gallery";
 import BooksFeature from "@/components/sections/BooksFeature";
 import Ecosystem from "@/components/sections/Ecosystem";
 import SocialProof from "@/components/sections/SocialProof";
@@ -19,6 +20,7 @@ export default function HomePage({ locale }: { locale: Locale }) {
       <About locale={locale} />
       <Philosophy locale={locale} />
       <Speaking locale={locale} />
+      <Gallery locale={locale} />
       <BooksFeature locale={locale} />
       <Ecosystem locale={locale} />
       <SocialProof locale={locale} />

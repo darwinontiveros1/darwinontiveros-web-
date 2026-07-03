@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import SiteChrome from "@/components/SiteChrome";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import Faq from "@/components/Faq";
@@ -53,6 +54,15 @@ export default function Page() {
           </Reveal>
 
           <Reveal>
+            <div className="relative mb-6 aspect-[4/5] w-full overflow-hidden rounded-2xl border border-border bg-surface">
+              <Image
+                src="/images/sobre-mi.jpg"
+                alt={P.fullName}
+                fill
+                sizes="(max-width: 1024px) 100vw, 33vw"
+                className="object-cover"
+              />
+            </div>
             <div className="card p-7">
               <h2 className="text-sm font-semibold uppercase tracking-wider text-muted-2">
                 Áreas de expertise
