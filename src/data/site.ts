@@ -105,13 +105,6 @@ export const SOCIALS = [
     followers: null,
     interactionType: "https://schema.org/FollowAction",
   },
-  {
-    platform: "LinkedIn",
-    handle: "Darwin Ontiveros",
-    url: "https://www.linkedin.com/in/darwin-ontiveros/",
-    followers: null,
-    interactionType: "https://schema.org/FollowAction",
-  },
 ] as const;
 
 // --- Referentes / mentores (autoridad por asociación) ----------------------
