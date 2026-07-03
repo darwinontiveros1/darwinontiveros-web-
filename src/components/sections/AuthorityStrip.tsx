@@ -13,6 +13,7 @@ export default function AuthorityStrip({ locale }: { locale: Locale }) {
     locale === "en"
       ? [
           "Bestselling Author",
+          "Guinness World Record Participant",
           "International Conferences",
           "+23K Community",
           "Sales Mentor",
@@ -21,6 +22,7 @@ export default function AuthorityStrip({ locale }: { locale: Locale }) {
         ]
       : [
           "Autor Bestseller",
+          "Participante del Récord Guinness",
           "Conferencias Internacionales",
           "+23K de Comunidad",
           "Mentor de Ventas",

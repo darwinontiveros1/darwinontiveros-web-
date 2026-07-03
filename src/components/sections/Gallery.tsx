@@ -12,12 +12,12 @@ type Photo = {
 const FEATURED: Photo = {
   src: "/images/guinness.jpg",
   alt: {
-    es: "Darwin Ontiveros en un evento de reconocimiento",
-    en: "Darwin Ontiveros at a recognition event",
+    es: "Darwin Ontiveros como participante del Récord Guinness a la entrevista más larga del mundo",
+    en: "Darwin Ontiveros as a participant in the Guinness World Record for the longest interview",
   },
   caption: {
-    es: "Eventos y reconocimientos",
-    en: "Events & recognition",
+    es: "Participante en el Récord Guinness — la entrevista más larga del mundo",
+    en: "Participant in the Guinness World Record — the longest interview ever",
   },
 };
 
