@@ -33,7 +33,6 @@ export default function WordReveal({
   const words = text.split(" ");
   return (
     <motion.span
-      className={className}
       variants={container}
       initial="hidden"
       animate="visible"
@@ -44,7 +43,14 @@ export default function WordReveal({
           key={`${w}-${i}`}
           className="inline-block overflow-hidden align-bottom"
         >
-          <motion.span variants={word} className="inline-block" aria-hidden>
+          {/* El gradiente se aplica a cada palabra (el nodo que contiene el
+              texto) para que background-clip:text recorte bien las letras.
+              Aplicarlo al contenedor deja el texto transparente e invisible. */}
+          <motion.span
+            variants={word}
+            className={`inline-block ${className ?? ""}`}
+            aria-hidden
+          >
             {w}
             {i < words.length - 1 ? "\u00A0" : ""}
           </motion.span>
