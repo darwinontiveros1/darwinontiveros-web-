@@ -107,8 +107,8 @@ export default function Gallery({ locale }: { locale: Locale }) {
         </Reveal>
 
         <div className="grid grid-cols-2 gap-5">
-          {PHOTOS.map((photo) => (
-            <Reveal key={photo.src}>
+          {PHOTOS.map((photo, i) => (
+            <Reveal key={photo.src} delay={i} direction="scale">
               <figure className="group relative aspect-square overflow-hidden rounded-2xl border border-border bg-surface">
                 <Image
                   src={photo.src}

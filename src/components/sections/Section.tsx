@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import Reveal from "@/components/motion/Reveal";
+import RevealHeading from "@/components/motion/RevealHeading";
 
 export function Section({
   id,
@@ -26,17 +26,5 @@ export function SectionHeading({
   title: string;
   subtitle?: string;
 }) {
-  return (
-    <Reveal className="mb-12 max-w-2xl">
-      {eyebrow && (
-        <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-accent">
-          {eyebrow}
-        </p>
-      )}
-      <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">{title}</h2>
-      {subtitle && (
-        <p className="mt-4 text-lg leading-relaxed text-muted">{subtitle}</p>
-      )}
-    </Reveal>
-  );
+  return <RevealHeading eyebrow={eyebrow} title={title} subtitle={subtitle} />;
 }
