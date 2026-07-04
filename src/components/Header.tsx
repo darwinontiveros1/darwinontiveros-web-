@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { NAV, PROFILE, type Locale } from "@/data/site";
+import Logo from "@/components/Logo";
 
 export default function Header({ locale }: { locale: Locale }) {
   const pathname = usePathname();
@@ -46,9 +47,14 @@ export default function Header({ locale }: { locale: Locale }) {
       <nav className="container-page flex h-16 items-center justify-between">
         <Link
           href={home}
-          className="text-base font-semibold tracking-tight text-foreground"
+          className="group flex items-center gap-2.5 text-base font-semibold tracking-tight text-foreground"
+          aria-label={PROFILE.fullName}
         >
-          {PROFILE.fullName}
+          <Logo
+            size={34}
+            className="transition-transform duration-300 group-hover:scale-105"
+          />
+          <span>{PROFILE.fullName}</span>
         </Link>
 
         {/* Desktop nav */}
