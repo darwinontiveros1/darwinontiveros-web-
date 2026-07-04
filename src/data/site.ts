@@ -141,33 +141,63 @@ export const BOOKS = [
 ] as const;
 
 // --- Testimonios -----------------------------------------------------------
-// NOTA: Reemplazá estos testimonios de ejemplo con reseñas reales
-// (nombre, rol y frase). El diseño se adapta automáticamente.
+// Reseñas REALES y verificadas de Trustpilot (perfil darwinontiveros.com).
+// TrustScore 4.6/5 sobre 22 reseñas. Verificable en el enlace público.
+
+export const TRUSTPILOT = {
+  profileUrl: "https://www.trustpilot.com/review/darwinontiveros.com",
+  trustScore: 4.6,
+  totalReviews: 22,
+} as const;
 
 export const TESTIMONIALS = [
   {
     quote: {
-      es: "Darwin no solo enseña a vender, transforma tu forma de pensar. Después de su conferencia mi equipo duplicó su producción en un trimestre.",
-      en: "Darwin doesn't just teach you to sell, he transforms the way you think. After his talk my team doubled its production in a quarter.",
+      es: "El acompañamiento es clave en todo lo que decidas emprender. No solo nos dan estrategias y herramientas de ventas, hay una formación integral y muchos incentivos que van más allá de lo económico. Acabamos de vivir una experiencia maravillosa en un viaje a New York que nos motiva aún más a seguir creciendo.",
+      en: "The mentorship is key to whatever you decide to build. It's not just sales strategies and tools — there's a complete formation and incentives that go beyond the financial. We just lived an amazing experience on a trip to New York that motivates us even more to keep growing.",
     },
-    name: "María Fernanda R.",
-    role: { es: "Directora Comercial", en: "Sales Director" },
+    name: "Dicson Añez",
+    rating: 5,
   },
   {
     quote: {
-      es: "La mejor inversión que hice para mi carrera. Su mentalidad de abundancia me sacó de un techo en el que llevaba años estancado.",
-      en: "The best investment I made in my career. His abundance mindset broke a ceiling I'd been stuck under for years.",
+      es: "Excelente manager y ser humano, con elevados estándares de servicio al cliente y un trato exquisito. Para mí es un honor pertenecer a su equipo.",
+      en: "Excellent manager and human being, with high standards of customer service and outstanding treatment. It's an honor to be part of his team.",
     },
-    name: "Carlos M.",
-    role: { es: "Emprendedor", en: "Entrepreneur" },
+    name: "Julio Ramirez",
+    rating: 5,
   },
   {
     quote: {
-      es: "Un conferencista que llena auditorios por una razón: entrega herramientas que funcionan. Energía, claridad y resultados reales.",
-      en: "A speaker who fills auditoriums for a reason: he delivers tools that work. Energy, clarity and real results.",
+      es: "Es un privilegio trabajar con él. Con ética y profesionalismo logra atender a todos sus clientes y agentes.",
+      en: "It's a privilege to work with him. With ethics and professionalism he manages to serve all his clients and agents.",
     },
-    name: "Ana Lucía G.",
-    role: { es: "Líder de Equipo", en: "Team Leader" },
+    name: "Julio Angulo",
+    rating: 5,
+  },
+  {
+    quote: {
+      es: "Siempre atento y enfocado en su trabajo, contamos con su apoyo un 100%. Es incansable y a cualquier pregunta siempre tiene la respuesta. Gracias por compartir tu conocimiento con quien más lo necesita.",
+      en: "Always attentive and focused on his work, we have his support 100%. He is tireless and always has an answer to any question. Thank you for sharing your knowledge with those who need it most.",
+    },
+    name: "Jessika Leon",
+    rating: 5,
+  },
+  {
+    quote: {
+      es: "Gracias por ser un mentor increíble. Eres amable en cada enfoque y me animas a trabajar con dedicación y a soñar en grande. Estoy muy agradecida de tener un mentor genial como tú.",
+      en: "Thank you for being an incredible mentor. You're kind in every approach and encourage me to work hard and dream big. I'm so grateful to have a great mentor like you.",
+    },
+    name: "Maria Tirado",
+    rating: 5,
+  },
+  {
+    quote: {
+      es: "Me encantan sus entrenamientos: es rápido, directo y está abierto a cualquier pregunta. He participado en varios y realmente siempre aporta alguna experiencia relevante.",
+      en: "I love his trainings: he's fast, direct and open to any question. I've taken part in several and he always brings a relevant experience to the table.",
+    },
+    name: "Lisandra Carralero",
+    rating: 5,
   },
 ] as const;
 
