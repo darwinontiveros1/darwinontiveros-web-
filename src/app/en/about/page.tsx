@@ -79,8 +79,11 @@ export default function Page() {
                         <Image src={ref.photo} alt={ref.name} fill sizes="36px" className="object-cover" />
                       </span>
                     )}
-                    <span className="text-sm font-medium text-foreground">{ref.name}</span>
-                    <span className="ml-auto text-xs text-muted-2">{ref.relation.en}</span>
+                    <span className="min-w-0">
+                      <span className="block text-sm font-medium text-foreground">{ref.name}</span>
+                      <span className="block text-xs text-muted-2">{ref.expertise.en}</span>
+                    </span>
+                    <span className="ml-auto shrink-0 text-xs font-medium text-accent">{ref.relation.en}</span>
                   </li>
                 ))}
               </ul>
