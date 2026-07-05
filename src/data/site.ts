@@ -110,7 +110,7 @@ export const SOCIALS = [
 // --- Referentes / mentores (autoridad por asociación) ----------------------
 
 export const REFERENCES = [
-  { name: "Spencer Hoffmann", relation: { es: "Colaborador", en: "Collaborator" }, photo: "/mentors/spencer-hoffmann.jpg" },
+  { name: "Spencer Hoffmann", relation: { es: "Mentor", en: "Mentor" }, photo: "/mentors/spencer-hoffmann.jpg" },
   { name: "John C. Maxwell", relation: { es: "Mentor", en: "Mentor" }, photo: "/mentors/john-maxwell.jpg" },
   { name: "Ismael Cala", relation: { es: "Referente", en: "Reference" }, photo: "/mentors/ismael-cala.jpg" },
   { name: "Vilma Núñez", relation: { es: "Referente", en: "Reference" }, photo: "/mentors/vilma-nunez.jpg" },
