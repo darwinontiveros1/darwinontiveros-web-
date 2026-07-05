@@ -110,11 +110,11 @@ export const SOCIALS = [
 // --- Referentes / mentores (autoridad por asociación) ----------------------
 
 export const REFERENCES = [
-  { name: "John C. Maxwell", relation: { es: "Mentor", en: "Mentor" } },
-  { name: "Ismael Cala", relation: { es: "Referente", en: "Reference" } },
-  { name: "Vilma Núñez", relation: { es: "Referente", en: "Reference" } },
-  { name: "Margarita Pasos", relation: { es: "Referente", en: "Reference" } },
-  { name: "Spencer Hoffmann", relation: { es: "Colaborador", en: "Collaborator" } },
+  { name: "Spencer Hoffmann", relation: { es: "Mentor", en: "Mentor" }, photo: "/mentors/spencer-hoffmann.jpg" },
+  { name: "John C. Maxwell", relation: { es: "Mentor", en: "Mentor" }, photo: "/mentors/john-maxwell.jpg" },
+  { name: "Ismael Cala", relation: { es: "Referente", en: "Reference" }, photo: "/mentors/ismael-cala.jpg" },
+  { name: "Vilma Núñez", relation: { es: "Referente", en: "Reference" }, photo: "/mentors/vilma-nunez.jpg" },
+  { name: "Margarita Pasos", relation: { es: "Referente", en: "Reference" }, photo: "/mentors/margarita-pasos.jpg" },
 ] as const;
 
 // --- Libros ----------------------------------------------------------------

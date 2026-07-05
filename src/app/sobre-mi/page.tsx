@@ -83,9 +83,14 @@ export default function Page() {
               </h2>
               <ul className="mt-4 space-y-3">
                 {REFERENCES.map((ref) => (
-                  <li key={ref.name} className="flex items-center justify-between gap-3">
+                  <li key={ref.name} className="flex items-center gap-3">
+                    {"photo" in ref && ref.photo && (
+                      <span className="relative h-9 w-9 shrink-0 overflow-hidden rounded-full border border-border">
+                        <Image src={ref.photo} alt={ref.name} fill sizes="36px" className="object-cover" />
+                      </span>
+                    )}
                     <span className="text-sm font-medium text-foreground">{ref.name}</span>
-                    <span className="text-xs text-muted-2">{ref.relation.es}</span>
+                    <span className="ml-auto text-xs text-muted-2">{ref.relation.es}</span>
                   </li>
                 ))}
               </ul>
