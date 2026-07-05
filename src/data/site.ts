@@ -110,11 +110,36 @@ export const SOCIALS = [
 // --- Referentes / mentores (autoridad por asociación) ----------------------
 
 export const REFERENCES = [
-  { name: "Spencer Hoffmann", relation: { es: "Mentor", en: "Mentor" }, photo: "/mentors/spencer-hoffmann.jpg" },
-  { name: "John C. Maxwell", relation: { es: "Mentor", en: "Mentor" }, photo: "/mentors/john-maxwell.jpg" },
-  { name: "Ismael Cala", relation: { es: "Referente", en: "Reference" }, photo: "/mentors/ismael-cala.jpg" },
-  { name: "Vilma Núñez", relation: { es: "Referente", en: "Reference" }, photo: "/mentors/vilma-nunez.jpg" },
-  { name: "Margarita Pasos", relation: { es: "Referente", en: "Reference" }, photo: "/mentors/margarita-pasos.jpg" },
+  {
+    name: "Spencer Hoffmann",
+    relation: { es: "Mentor", en: "Mentor" },
+    expertise: { es: "Experto en negocios digitales", en: "Digital business expert" },
+    photo: "/mentors/spencer-hoffmann.jpg",
+  },
+  {
+    name: "John C. Maxwell",
+    relation: { es: "Mentor", en: "Mentor" },
+    expertise: { es: "Autoridad mundial en liderazgo", en: "World-renowned leadership authority" },
+    photo: "/mentors/john-maxwell.jpg",
+  },
+  {
+    name: "Ismael Cala",
+    relation: { es: "Referente", en: "Reference" },
+    expertise: { es: "Comunicador y desarrollo personal", en: "Communicator & personal growth" },
+    photo: "/mentors/ismael-cala.jpg",
+  },
+  {
+    name: "Vilma Núñez",
+    relation: { es: "Referente", en: "Reference" },
+    expertise: { es: "Referente en marketing digital", en: "Digital marketing leader" },
+    photo: "/mentors/vilma-nunez.jpg",
+  },
+  {
+    name: "Margarita Pasos",
+    relation: { es: "Referente", en: "Reference" },
+    expertise: { es: "Experta en mentalidad y éxito", en: "Mindset & success expert" },
+    photo: "/mentors/margarita-pasos.jpg",
+  },
 ] as const;
 
 // --- Libros ----------------------------------------------------------------

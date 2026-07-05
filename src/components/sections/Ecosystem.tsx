@@ -41,7 +41,12 @@ export default function Ecosystem({ locale }: { locale: Locale }) {
                   </div>
                 )}
                 <p className="text-sm font-semibold text-foreground">{ref.name}</p>
-                <p className="text-xs text-muted-2">{ref.relation[locale]}</p>
+                <p className="text-[11px] font-semibold uppercase tracking-wider text-accent">
+                  {ref.relation[locale]}
+                </p>
+                <p className="text-xs leading-snug text-muted-2">
+                  {ref.expertise[locale]}
+                </p>
               </div>
             </Reveal>
           );
