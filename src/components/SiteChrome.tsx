@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppFab from "@/components/WhatsAppFab";
 import ScrollProgress from "@/components/motion/ScrollProgress";
+import Background3D from "@/components/three/Background3D";
 import { type Locale } from "@/data/site";
 
 /** Envuelve una página con Header, Footer y botón flotante de WhatsApp. */
@@ -15,6 +16,7 @@ export default function SiteChrome({
 }) {
   return (
     <>
+      <Background3D />
       <ScrollProgress />
       <Header locale={locale} />
       <main>{children}</main>

@@ -45,10 +45,14 @@
 
 html {
   scroll-behavior: smooth;
+  /* Base oscura de respaldo: el fondo 3D (canvas fijo) se pinta encima de
+     esta base y por debajo del contenido, que va sobre un body translúcido. */
+  background: var(--background);
 }
 
 body {
-  background: var(--background);
+  /* Translúcido para dejar entrever el fondo 3D sin sacrificar legibilidad. */
+  background: color-mix(in srgb, var(--background) 74%, transparent);
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
