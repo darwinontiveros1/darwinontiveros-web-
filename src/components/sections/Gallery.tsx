@@ -74,14 +74,12 @@ export default function Gallery({ locale }: { locale: Locale }) {
       ? {
           eyebrow: "Trajectory",
           title: "Impact that speaks for itself",
-          subtitle:
-            "From recognized events to stages filled with people ready to transform their mindset.",
+          subtitle: "Recognized events, packed stages, real impact.",
         }
       : {
           eyebrow: "Trayectoria",
           title: "Un impacto que habla por sí solo",
-          subtitle:
-            "De eventos con reconocimiento a escenarios llenos de personas listas para transformar su mentalidad.",
+          subtitle: "Reconocimientos, escenarios llenos e impacto real.",
         };
 
   return (

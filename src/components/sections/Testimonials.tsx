@@ -1,6 +1,7 @@
 import { TESTIMONIALS, TRUSTPILOT, type Locale } from "@/data/site";
 import { Section, SectionHeading } from "./Section";
 import Reveal from "@/components/motion/Reveal";
+import Tilt3D from "@/components/motion/Tilt3D";
 
 export default function Testimonials({ locale }: { locale: Locale }) {
   const t =
@@ -57,7 +58,8 @@ export default function Testimonials({ locale }: { locale: Locale }) {
 
       <div className="grid gap-6 md:grid-cols-3">
         {TESTIMONIALS.map((item, i) => (
-          <Reveal key={item.name} delay={i} direction="scale">
+          <Reveal key={item.name} delay={i} direction="scale" className="h-full">
+            <Tilt3D className="h-full" max={7}>
             <figure className="glow-ring card card-hover flex h-full flex-col justify-between p-7">
               <div>
                 <div className="flex items-center justify-between">
@@ -81,6 +83,7 @@ export default function Testimonials({ locale }: { locale: Locale }) {
                 </div>
               </figcaption>
             </figure>
+            </Tilt3D>
           </Reveal>
         ))}
       </div>
