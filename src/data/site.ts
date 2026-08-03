@@ -22,9 +22,11 @@ export const PROFILE = {
   es: {
     role: "Emprendedor, Conferencista y Autor",
     tagline: "Ventas sin límites. Liderazgo sin excusas.",
-    heroHeadline: "Conviértete en imparable en las ventas y en la vida.",
+    heroHeadline: "Vuélvete imparable en las ventas y en la vida.",
     heroSub:
-      "Ayudo a vendedores, líderes y emprendedores a romper sus techos de producción, construir equipos de alto rendimiento y crear una vida abundante — con estrategia, mentalidad y ejecución.",
+      "Rompe tus techos, construye equipos de alto rendimiento y vive en abundancia. Estrategia, mentalidad y ejecución.",
+    bioHook:
+      "Líder en ventas, autor y mentor. Ayudo a vendedores y líderes a romper sus techos y construir equipos imparables — sin sacrificar lo que más importa.",
     bioShort:
       "Darwin Ontiveros es emprendedor, conferencista y autor del libro «Imparable y Abundante — Ventas Sin Límites». Líder en el área de ventas, tanto en producción personal como en la creación y desarrollo de equipos de alto rendimiento, y mentor de desarrollo personal, ventas y negocios.",
     bioLong:
@@ -45,7 +47,9 @@ export const PROFILE = {
     tagline: "Sales without limits. Leadership without excuses.",
     heroHeadline: "Become unstoppable in sales and in life.",
     heroSub:
-      "I help salespeople, leaders and entrepreneurs break their income ceilings, build high-performance teams and create an abundant life — through strategy, mindset and execution.",
+      "Break your ceilings, build high-performance teams and live in abundance. Strategy, mindset and execution.",
+    bioHook:
+      "Sales leader, author and mentor. I help salespeople and leaders break their ceilings and build unstoppable teams — without sacrificing what matters most.",
     bioShort:
       "Darwin Ontiveros is an entrepreneur, speaker and author of the book “Unstoppable and Abundant — Sales Without Limits.” A leader in the field of sales, both in personal production and in building and developing high-performance teams, and a mentor in personal development, sales and business.",
     bioLong:

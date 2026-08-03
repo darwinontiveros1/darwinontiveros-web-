@@ -52,7 +52,7 @@ html {
 
 body {
   /* Translúcido para dejar entrever el fondo 3D sin sacrificar legibilidad. */
-  background: color-mix(in srgb, var(--background) 74%, transparent);
+  background: color-mix(in srgb, var(--background) 70%, transparent);
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;

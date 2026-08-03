@@ -2,6 +2,7 @@ import Image from "next/image";
 import { REFERENCES, type Locale } from "@/data/site";
 import { Section, SectionHeading } from "./Section";
 import Reveal from "@/components/motion/Reveal";
+import Tilt3D from "@/components/motion/Tilt3D";
 
 function initials(name: string) {
   return name
@@ -13,8 +14,8 @@ function initials(name: string) {
 
 export default function Ecosystem({ locale }: { locale: Locale }) {
   const t = locale === "en"
-    ? { eyebrow: "Ecosystem", title: "Trained by the best", subtitle: "Formed and inspired by world-class references in personal development and business." }
-    : { eyebrow: "Ecosistema", title: "Formado por los mejores", subtitle: "Formado e inspirado por referentes de clase mundial en desarrollo personal y negocios." };
+    ? { eyebrow: "Ecosystem", title: "Trained by the best", subtitle: "Formed and inspired by world-class references." }
+    : { eyebrow: "Ecosistema", title: "Formado por los mejores", subtitle: "Formado e inspirado por referentes de clase mundial." };
 
   return (
     <Section id="ecosistema">
@@ -23,7 +24,8 @@ export default function Ecosystem({ locale }: { locale: Locale }) {
         {REFERENCES.map((ref, i) => {
           const photo = "photo" in ref ? (ref.photo as string) : null;
           return (
-            <Reveal key={ref.name} delay={i}>
+            <Reveal key={ref.name} delay={i} className="h-full">
+              <Tilt3D className="h-full">
               <div className="card card-hover flex h-full flex-col items-center justify-center gap-3 p-6 text-center">
                 {photo ? (
                   <div className="relative h-20 w-20 overflow-hidden rounded-full border border-border ring-1 ring-accent/20">
@@ -48,6 +50,7 @@ export default function Ecosystem({ locale }: { locale: Locale }) {
                   {ref.expertise[locale]}
                 </p>
               </div>
+              </Tilt3D>
             </Reveal>
           );
         })}

@@ -12,8 +12,8 @@ export default function About({ locale }: { locale: Locale }) {
     : { eyebrow: "Sobre mí", title: "Quién es Darwin Ontiveros", more: "Ver biografía completa" };
   const aboutHref = locale === "en" ? "/en/about" : "/sobre-mi";
 
-  // Primer párrafo de la bio larga como resumen.
-  const intro = p.bioLong.split("\n\n")[0];
+  // Gancho corto y potente (el texto largo vive en la página de biografía).
+  const intro = p.bioHook;
 
   return (
     <Section id="about">
