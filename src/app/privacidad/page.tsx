@@ -98,7 +98,7 @@ export default function Page() {
 
             <H>Quién responde por estos datos</H>
             <P>
-              OG Business Group.
+              OG Business Group LLC.
               <br />
               Correo de contacto:{" "}
               <a className="text-accent underline underline-offset-4" href={`mailto:${CONTACT.assistantEmail}`}>
