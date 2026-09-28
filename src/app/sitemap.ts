@@ -17,6 +17,7 @@ const STATIC_PAIRS: [string, string][] = [
   ["/libros", "/en/books"],
   ["/prensa", "/en/press"],
   ["/blog", "/en/blog"],
+  ["/privacidad", "/en/privacy"],
 ];
 
 function entry(

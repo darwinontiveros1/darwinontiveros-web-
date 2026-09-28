@@ -5,8 +5,10 @@ export default function Footer({ locale }: { locale: Locale }) {
   const nav = NAV[locale];
   const year = new Date().getFullYear();
   const t = locale === "en"
-    ? { rights: "All rights reserved.", nav: "Navigation", follow: "Follow", contact: "Contact" }
-    : { rights: "Todos los derechos reservados.", nav: "Navegación", follow: "Sígueme", contact: "Contacto" };
+    ? { rights: "All rights reserved.", nav: "Navigation", follow: "Follow", contact: "Contact",
+        privacy: "Privacy Policy", privacyPath: "/en/privacy" }
+    : { rights: "Todos los derechos reservados.", nav: "Navegación", follow: "Sígueme", contact: "Contacto",
+        privacy: "Política de privacidad", privacyPath: "/privacidad" };
 
   return (
     <footer className="mt-24 border-t border-border bg-background-soft">
@@ -75,7 +77,12 @@ export default function Footer({ locale }: { locale: Locale }) {
           <p>
             © {year} {PROFILE.fullName}. {t.rights}
           </p>
-          <p>{CONTACT.assistantEmail}</p>
+          <div className="flex items-center gap-4">
+            <a href={t.privacyPath} className="transition-colors hover:text-foreground">
+              {t.privacy}
+            </a>
+            <p>{CONTACT.assistantEmail}</p>
+          </div>
         </div>
       </div>
     </footer>
