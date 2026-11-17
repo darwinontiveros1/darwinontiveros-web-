@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
 };
 
-const ACTUALIZADA = "28 de septiembre de 2026";
+const ACTUALIZADA = "17 de noviembre de 2026";
 
 function H({ children, id }: { children: React.ReactNode; id?: string }) {
   return (
@@ -81,7 +81,10 @@ export default function Page() {
         </Reveal>
 
         <div className="mt-12 max-w-3xl">
-          <Reveal>
+          {/* Sin Reveal: en un teléfono este bloque mide más de cinco pantallas y la
+              animación (pide ver el 20 % a la vez) nunca arrancaba; la página se
+              quedaba en blanco. El texto legal se ve siempre. */}
+          <div>
             <div className="rounded-xl border-l-2 border-accent bg-white/[0.02] px-5 py-4">
               <p className="leading-relaxed">
                 <span className="font-semibold">En una frase:</span> guardamos los datos que
@@ -120,6 +123,14 @@ export default function Page() {
                   "Conversaciones de WhatsApp desde un anuncio",
                   "Tu número y lo que nos escribes.",
                 ],
+                [
+                  "Mensajes directos a @darwin_ontiveros en Instagram, también las respuestas a nuestras historias",
+                  "Tu usuario, el nombre de tu perfil, si sigues la cuenta, el número con el que Instagram te identifica ante nosotros y lo que nos escribes. Si mandas una foto, un audio o un vídeo, guardamos el enlace que nos da Instagram, no el archivo.",
+                ],
+                [
+                  "Comentarios en nuestras publicaciones de Instagram",
+                  "Tu usuario, lo que escribiste, en qué publicación y cuándo.",
+                ],
                 ["Formularios de esta web", "Lo que rellenes en ellos."],
                 [
                   "Llamadas",
@@ -135,6 +146,18 @@ export default function Page() {
             <H>Para qué lo usamos</H>
             <ul className="mt-3 space-y-2 text-muted">
               <li>· Responderte y atender lo que nos pediste.</li>
+              <li>
+                · Contestar tus mensajes y comentarios de Instagram. Si comentas o nos
+                escribes la palabra que pedimos en una publicación (por ejemplo, CLASE), el
+                sistema te manda automáticamente un mensaje privado con lo que pediste, y
+                puede contestar a tu comentario en público.
+              </li>
+              <li>
+                · Un <span className="font-medium text-fg">asistente virtual</span> puede
+                contestarte por WhatsApp o Instagram. Siempre dice que es un asistente
+                virtual. Si prefieres hablar con una persona, pídelo en el mismo chat y se lo
+                pasamos a alguien del equipo.
+              </li>
               <li>· Prepararte presupuestos y hacerles seguimiento.</li>
               <li>
                 · Saber qué anuncios funcionan, contando cuántas personas llegaron por cada
@@ -151,8 +174,9 @@ export default function Page() {
             <H>Dónde viven y cuánto tiempo</H>
             <ul className="mt-3 space-y-2 text-muted">
               <li>
-                · En una base de datos con acceso separado por empresa: el personal de una
-                agencia no puede ver los datos de otra.
+                · En servidores de Amazon Web Services en Estados Unidos, en una base de datos
+                con acceso separado por empresa: el personal de una agencia no puede ver los
+                datos de otra.
               </li>
               <li>
                 · Los avisos que manda Meta cuando rellenas un formulario pasan por una cola
@@ -177,16 +201,22 @@ export default function Page() {
               filas={[
                 [
                   "Meta",
-                  "Los datos que tú mismo escribiste en su formulario o le mandaste por WhatsApp. Ya los tenía: nosotros los recibimos de ellos.",
+                  "Lo que tú mismo escribiste en su formulario o nos mandaste por WhatsApp o Instagram. Ya lo tenía: nosotros lo recibimos de Meta, y nuestras respuestas te llegan también a través de Meta.",
                 ],
-                ["Amazon Web Services", "Aloja la cola por la que pasan los avisos de formularios nuevos."],
+                [
+                  "Amazon Web Services",
+                  "Aloja DAOS Portal entero: los servidores, la base de datos y sus copias, la cola de avisos y el envío de correos. Todo en Estados Unidos.",
+                ],
                 [
                   "Anthropic",
                   <>
-                    <span className="font-medium text-fg">Ningún dato tuyo.</span> Usamos su
-                    modelo para revisar nuestras propias piezas publicitarias: se le manda la
-                    imagen del anuncio y su texto, nada más. No recibe nombres, teléfonos,
-                    correos ni cifras de clientes.
+                    Su modelo de inteligencia artificial escribe las respuestas del asistente
+                    virtual. Cuando el asistente te contesta por WhatsApp o Instagram, o te
+                    llama, recibe <span className="font-medium text-fg">esa conversación y tu
+                    nombre</span>, si lo sabemos. También lo usamos para revisar nuestras piezas
+                    publicitarias y para redactar presupuestos a partir de lo que nos pediste.
+                    Según sus condiciones para empresas, no usa estos datos para entrenar sus
+                    modelos.
                   </>,
                 ],
                 ["Telnyx", "Si nos llamas o te llamamos, el número y la llamada."],
@@ -204,8 +234,8 @@ export default function Page() {
                 {CONTACT.assistantEmail}
               </a>{" "}
               con el asunto <span className="font-mono text-sm">Eliminar mis datos</span> e
-              incluye el teléfono o el correo con el que nos contactaste y, si lo recuerdas,
-              por dónde llegaste.
+              incluye el teléfono, el correo o el usuario de Instagram con el que nos
+              contactaste y, si lo recuerdas, por dónde llegaste.
             </P>
             <P>
               Te confirmamos dentro de los{" "}
@@ -225,7 +255,7 @@ export default function Page() {
               Si cambiamos algo importante, actualizamos la fecha de arriba. La versión que
               vale es siempre la que está publicada aquí.
             </P>
-          </Reveal>
+          </div>
         </div>
       </div>
     </SiteChrome>
