@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
 };
 
-const UPDATED = "September 28, 2026";
+const UPDATED = "November 17, 2026";
 
 function H({ children, id }: { children: React.ReactNode; id?: string }) {
   return (
@@ -81,7 +81,10 @@ export default function Page() {
         </Reveal>
 
         <div className="mt-12 max-w-3xl">
-          <Reveal>
+          {/* Sin Reveal: en un teléfono este bloque mide más de cinco pantallas y la
+              animación (pide ver el 20 % a la vez) nunca arrancaba; la página se
+              quedaba en blanco. El texto legal se ve siempre. */}
+          <div>
             <div className="rounded-xl border-l-2 border-accent bg-white/[0.02] px-5 py-4">
               <p className="leading-relaxed">
                 <span className="font-semibold">In one sentence:</span> we keep the details you
@@ -120,6 +123,14 @@ export default function Page() {
                   "WhatsApp conversations started from an ad",
                   "Your number and what you write to us.",
                 ],
+                [
+                  "Direct messages to @darwin_ontiveros on Instagram, including replies to our stories",
+                  "Your username, your profile name, whether you follow the account, the number Instagram uses to identify you to us, and what you write to us. If you send a photo, an audio or a video, we keep the link Instagram gives us, not the file.",
+                ],
+                [
+                  "Comments on our Instagram posts",
+                  "Your username, what you wrote, on which post and when.",
+                ],
                 ["Forms on this site", "Whatever you fill in."],
                 [
                   "Phone calls",
@@ -135,6 +146,18 @@ export default function Page() {
             <H>What we use it for</H>
             <ul className="mt-3 space-y-2 text-muted">
               <li>· To reply to you and handle what you asked for.</li>
+              <li>
+                · To answer your Instagram messages and comments. If you comment or send us
+                the word we ask for in a post (for example, CLASE), the system automatically
+                sends you a private message with what you asked for, and may reply to your
+                comment publicly.
+              </li>
+              <li>
+                · A <span className="font-medium text-fg">virtual assistant</span> may answer
+                you on WhatsApp or Instagram. It always says it is a virtual assistant. If you
+                would rather talk to a person, ask in the same chat and we hand you over to
+                someone on the team.
+              </li>
               <li>· To prepare quotes and follow up on them.</li>
               <li>
                 · To know which ads work, by counting how many people came through each
@@ -151,8 +174,9 @@ export default function Page() {
             <H>Where it lives and for how long</H>
             <ul className="mt-3 space-y-2 text-muted">
               <li>
-                · In a database with access separated per company: staff at one agency
-                cannot see another agency&apos;s data.
+                · On Amazon Web Services servers in the United States, in a database with
+                access separated per company: staff at one agency cannot see another
+                agency&apos;s data.
               </li>
               <li>
                 · The notifications Meta sends when you fill in a form pass through a queue
@@ -177,16 +201,21 @@ export default function Page() {
               filas={[
                 [
                   "Meta",
-                  "The data you yourself typed into their form or sent them on WhatsApp. They already had it: we receive it from them.",
+                  "What you yourself typed into their form or sent us on WhatsApp or Instagram. They already had it: we receive it from Meta, and our replies also reach you through Meta.",
                 ],
-                ["Amazon Web Services", "Hosts the queue that new form notifications pass through."],
+                [
+                  "Amazon Web Services",
+                  "Hosts all of DAOS Portal: the servers, the database and its backups, the notification queue and outgoing email. All in the United States.",
+                ],
                 [
                   "Anthropic",
                   <>
-                    <span className="font-medium text-fg">No data of yours.</span> We use their
-                    model to review our own ad creatives: it is sent the ad image and its
-                    text, nothing else. It receives no names, phones, emails or client
-                    figures.
+                    Their artificial intelligence model writes the virtual assistant&apos;s
+                    replies. When the assistant answers you on WhatsApp or Instagram, or calls
+                    you, it receives <span className="font-medium text-fg">that conversation
+                    and your name</span>, if we know it. We also use it to review our ad
+                    creatives and to draft quotes from what you asked us for. Under its
+                    business terms, it does not use this data to train its models.
                   </>,
                 ],
                 ["Telnyx", "If you call us or we call you, the number and the call."],
@@ -204,12 +233,12 @@ export default function Page() {
                 {CONTACT.assistantEmail}
               </a>{" "}
               with the subject <span className="font-mono text-sm">Delete my data</span> and
-              include the phone or email you contacted us with and, if you remember, where you
-              came from.
+              include the phone, email or Instagram username you contacted us with and, if you
+              remember, where you came from.
             </P>
             <P>
               We confirm within{" "}
-              <span className="font-medium text-fg">fifteen business days</span> . If we
+              <span className="font-medium text-fg">fifteen business days</span>. If we
               cannot delete something because of a legal obligation, we tell you what it is
               and for how long we have to keep it. You do not need to explain why.
             </P>
@@ -225,7 +254,7 @@ export default function Page() {
               If we change something important, we update the date above. The version that
               counts is always the one published here.
             </P>
-          </Reveal>
+          </div>
         </div>
       </div>
     </SiteChrome>
